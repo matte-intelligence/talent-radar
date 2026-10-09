@@ -29,6 +29,28 @@ metric 8 is the number a Claude Startups reviewer should expect us to track.
 
 ## Protocol
 
+**Comparator design (three arms):** every measured batch compares (1) manual
+research as practiced today, (2) plain Claude plus a written checklist, and
+(3) the Talent Radar workflow. Without arm 2, "AI assists" is unfalsifiable.
+
+**Critical errors are reported separately**, not inside averages: wrong-person
+attribution, an unsupported claim that reached a shortlist, and omitted contrary
+evidence are each tracked per batch. One critical error is more informative
+than a 95 % average.
+
+**Coverage is measured alongside accuracy**: candidates and contrary evidence
+the workflow missed, not only the correctness of what it produced.
+
+**Effort is split into elapsed time and active human labour** (founder,
+researcher, reviewer minutes are logged separately — reviewers are not free).
+
+**Sample-size honesty:** 25 stratified items support debugging, not a stable
+accuracy claim — even 25/25 gives a one-sided 95 % lower bound near 88.7 %.
+Larger samples follow once the workflow is stable.
+
+**Publication safeguards:** results are aggregated and redacted; no confidential
+mandate or candidate material is published, whatever the openness commitment.
+
 - Sampling: **25 stratified evidence items per research batch** (not 50 — the
   per-batch scope is smaller; strata: source type × criterion).
 - Two reviewers independently; disagreements resolved by the partner; agreement

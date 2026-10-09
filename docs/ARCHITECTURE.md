@@ -32,9 +32,12 @@ prototype will be built against — and judged by.
 ```
 
 **Provenance mechanism:** source-grounded extraction via the **Anthropic Citations
-API** (plus Claude's web-search tool for allow-listed discovery) — every claim
-comes back pinned to the exact passage it was drawn from. That is what makes
-"every fact stored with its source" an API guarantee, not a convention.
+API** (plus Claude's web-search tool for allow-listed discovery). The Citations API
+guarantees valid citation pointers to supplied passages — it does not guarantee the
+truth of the underlying source, correct identity matching or complete coverage.
+Application-level checks and human review still assess support, identity, completeness
+and conflicts; implementation must account for the documented interplay between
+citations and strict structured outputs (parsing and validation are specified separately).
 
 ## v0 scope — in / out (deliberate cuts)
 
