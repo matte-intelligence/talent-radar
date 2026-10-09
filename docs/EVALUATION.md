@@ -1,31 +1,47 @@
 # Talent Radar — evaluation plan
 
 **Version:** 0.9 (public). We publish metrics only when measured; until then,
-this page is the definition — not the result.
+this page is the protocol definition — not the result.
+
+## Baseline commitment (before the prototype runs)
+
+The manual baseline is not "TBD" — it is a scheduled measurement: the next
+**three parent-firm mandates** are tracked end-to-end (hours spent, sources
+consulted, corrections during client review) and published in this repository
+as `results/baseline-001` **before** the first prototype-assisted mandate runs.
+Every "vs manual" claim below refers to that published baseline.
 
 ## Metrics
 
 | # | Metric | Definition | Baseline | Target (prototype) |
 |---|---|---|---|---|
-| 1 | **Source accuracy** | % of evidence items whose claim matches its cited source on human audit (sample 50/mandate) | TBD (manual research audit, parent-firm practice) | ≥ 95 % |
-| 2 | **Research time** | total wall-clock from mandate brief to review-ready profiles | manual practice baseline (TBD) | −50 % vs manual |
-| 3 | **Reviewer corrections** | edits per profile at review (flags, fact fixes, removals) | TBD | ↓ trend, all logged |
-| 4 | **Shortlist relevance** | % of shortlisted candidates advanced to client interviews | practice baseline | ≥ practice baseline |
-| 5 | **Freshness** | median age of cited sources | n/a | ≤ 90 days |
-| 6 | **Review time** | human minutes per profile | TBD | ≤ 15 min |
+| 1 | **Source accuracy** | % of audited evidence items whose claim matches its cited source | measured via baseline-001 | ≥ 95 % |
+| 2 | **Research time** | wall-clock from mandate brief to review-ready profiles | measured via baseline-001 | −50 % or better vs published baseline |
+| 3 | **Reviewer corrections** | edits per profile at review (fact fixes, removals) | measured via baseline-001 | ↓ trend, all logged |
+| 4 | **Shortlist relevance** | % of shortlisted candidates advanced to client interviews | retrospective audit of the parent firm's last 10 mandates (instrument: mandate debrief files, coded to the same definition) | ≥ audited baseline |
+| 5 | **Source freshness** | median age of cited sources | n/a | ≤ 90 days |
+| 6 | **Review time** | human minutes per profile | measured via baseline-001 | ≤ 15 min |
+| 7 | **Inter-reviewer agreement** | % of audit items where two reviewers agree | n/a | reported from the first batch |
+| 8 | **API cost per mandate** | Claude API spend per completed research batch | n/a | reported with every results report |
+
+Metric 7 costs nothing (two reviewers are already part of the protocol) and
+metric 8 is the number a Claude Startups reviewer should expect us to track.
 
 ## Protocol
 
-- Every mandate run through the pipeline is audited on a fixed 50-item sample.
-- Two reviewers independently; disagreements resolved by the partner, logged.
-- Results (including failures) will be published in this repository as
-  `results/` reports — methodology above, no cherry-picking.
+- Sampling: **25 stratified evidence items per research batch** (not 50 — the
+  per-batch scope is smaller; strata: source type × criterion).
+- Two reviewers independently; disagreements resolved by the partner; agreement
+  rate reported with every batch.
+- Results — **including failures** — are published in this repository under
+  `results/`, methodology fixed above, no cherry-picking.
 - The **synthetic concept demo** (demo.matteiic.com) makes no performance claims
   and is excluded from all metrics.
 
 ## Fairness & safety checks
 
-- Evidence samples screened for proxy-discrimination signals (age, origin,
-  gender-coded language) before shortlist assembly.
-- Any flag of systematic bias pauses the pipeline for human review — by design,
-  not as an exception.
+- v0 instrument: a maintained lexicon of proxy-discrimination marker terms
+  (age-coded, origin-coded, gender-coded phrasing) applied to every profile
+  before shortlist assembly, plus a human check of all flags; a statistical
+  eval set is a later milestone, and we say so rather than imply otherwise.
+- Any confirmed bias signal pauses the pipeline for partner review — by design.

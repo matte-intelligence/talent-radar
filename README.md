@@ -5,7 +5,7 @@
 **A research tool for executive-search teams.**
 Authorized market information → documented, source-linked profiles → human-signed recommendations.
 
-`status: concept → prototype` · `AI: Claude API (planned)` · `hosting: Canada-first`
+`status: v0 concept · synthetic demo · prototype in development` · `AI: Claude API (planned)` · `hosting: Canada-first`
 
 [Concept demo (synthetic data)](https://demo.matteiic.com) · [matteiic.com](https://matteiic.com)
 
@@ -48,14 +48,14 @@ starts every mandate from a **living, documented map** and ends it with a
 | [`docs/CONCEPT.md`](docs/CONCEPT.md) | product concept, users, honest maturity table |
 | [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) | planned Claude-API pipeline, storage, hosting |
 | [`docs/EVALUATION.md`](docs/EVALUATION.md) | how we will measure source accuracy, research time, reviewer corrections |
-| [`demo/`](https://demo.matteiic.com) | interactive concept demo — **entirely fictional data** |
+| → [demo.matteiic.com](https://demo.matteiic.com) | interactive concept demo — **entirely fictional data** (hosted separately, not in this repo) |
 
 ## What is real vs. roadmap (no embellishment)
 
 | Module | Status |
 |---|---|
 | Research workflow & review protocol | **In development** |
-| Talent Radar — market mapping & profiles | **Concept + synthetic demo** |
+| Talent Radar — market mapping & profiles | **v0 concept · synthetic demo · prototype in development** |
 | Claude API integration (research agents, extraction, synthesis) | **Planned** — next milestone |
 | Interview documentation (Assessment 2.0) | Roadmap |
 | Opt-in coaching physiology module | Roadmap, scope under definition |
